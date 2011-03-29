@@ -7,5 +7,7 @@ get '/' do
 end
 
 post '/' do
-  CodeRay.scan(params[:code], 'ruby').page
+  @code = CodeRay.scan(params[:code], 'ruby').div(:line_numbers => :table)
+  
+  erb :code
 end
