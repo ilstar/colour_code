@@ -1,12 +1,11 @@
 require 'rubygems'
 require 'sinatra'
+require 'coderay'
 
 get '/' do
-  @name = 'hodd'
   erb :index
 end
 
 post '/' do
-  p request.xhr?
-  p params
+  CodeRay.scan(params[:code], 'ruby').page
 end
