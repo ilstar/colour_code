@@ -1,4 +1,4 @@
-== Colour Your Code
+= Colour Your Code
 
 This is a simple application base on Sinatra, paste your code at here and colour it for you.
 
