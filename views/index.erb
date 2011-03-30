@@ -13,6 +13,11 @@
 
     <form action="/" method="post" id="colour-form">
       <textarea name="code" id="code" cols="80" rows="12"></textarea><br/>
+      <select name="lang" id="lang">
+        <% CODE_LANGS.each do |lang| %>
+          <option value="<%= lang %>"><%= lang %></option>
+        <% end %>
+      </select>
       <input type="submit" value="Colour it!">
     </form>
 
