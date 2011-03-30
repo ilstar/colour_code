@@ -9,14 +9,7 @@ get '/' do
 end
 
 post '/' do
-  scan = CodeRay.scan(params[:code], params[:lang])
-
-  @code = case params[:output_type]
-  when 'page'
-    scan.page
-  when 'inline'
-    scan.div(:line_numbers => :table)
-  end
+  @code = CodeRay.scan(params[:code], params[:lang]).html(:line_numbers => :table, :css => params[:css_type].to_sym)
   
   erb :code
 end

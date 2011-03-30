@@ -5,7 +5,7 @@ $(function() {
 
     var url = $(this).attr('action');
 
-    $.post(url, {code: $('#code').val(), lang: $('#lang').val(), output_type: $('#output-type').val()}, function(data) {
+    $.post(url, {code: $('#code').val(), lang: $('#lang').val(), css_type: $('#css-type').val()}, function(data) {
       $('#preview').html(data);
     });
   });
