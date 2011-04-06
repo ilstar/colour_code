@@ -9,11 +9,17 @@
 
 <script type="text/javascript" language="javascript" charset="utf-8">
   var clip = new ZeroClipboard.Client();
+  clip.addEventListener('mouseover', function() {
+    $('#copy-tip').text('Copy the source code!');
+  });
+  clip.addEventListener('mouseout', function() {
+    $('#copy-tip').text('');
+  });
   clip.addEventListener('mousedown',function() {
     clip.setText(document.getElementById('colour-code').value);
   });
   clip.addEventListener('complete',function(client,text) {
-    alert('copied: ' + text);
+    $('#copy-tip').text('Copied!');
   });
   clip.glue('copy'); // the button id
 </script>
