@@ -1,3 +1,19 @@
 <%= @code %>
 
-<textarea rows="12" cols="120"><%= @code %></textarea>
+<div>
+  <a href="javascript:;" id="copy">copy</a>
+  <span id="copy-tip"></span>
+</div>
+
+<textarea rows="12" cols="120" id="colour-code"><%= @code %></textarea>
+
+<script type="text/javascript" language="javascript" charset="utf-8">
+  var clip = new ZeroClipboard.Client();
+  clip.addEventListener('mousedown',function() {
+    clip.setText(document.getElementById('colour-code').value);
+  });
+  clip.addEventListener('complete',function(client,text) {
+    alert('copied: ' + text);
+  });
+  clip.glue('copy'); // the button id
+</script>
