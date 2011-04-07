@@ -9,4 +9,12 @@ $(function() {
       $('#preview').html(data);
     });
   });
+
+  // for ajax spinner
+  $('body').ajaxStart(function() {
+    $('#spinner').show();
+  });
+  $('body').ajaxStop(function() {
+    $('#spinner').hide();
+  });
 });
