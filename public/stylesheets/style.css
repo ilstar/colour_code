@@ -1,0 +1,10 @@
+/* custom stylesheets */
+
+textarea {
+  width: 100%;
+}
+
+#preview {
+  font-size: 12px;
+  color: #9A9A9A;
+}
