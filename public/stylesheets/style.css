@@ -1,5 +1,23 @@
 /* custom stylesheets */
 
+body {
+  background-color: #EEE;
+}
+
+.container {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  padding: 40px 60px;
+  margin: 40px auto 20px;
+  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 36px;
+}
+
 textarea {
   width: 100%;
 }
