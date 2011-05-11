@@ -5,7 +5,7 @@ $(function() {
 
     var url = $(this).attr('action');
 
-    $.post(url, {code: $('#code').val(), lang: $('#lang').val(), css_type: $('#css-type').val()}, function(data) {
+    $.post(url, $(this).serialize(), function(data) {
       $('#preview').html(data);
     });
   });
