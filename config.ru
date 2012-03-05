@@ -1,3 +1,3 @@
-require 'colour_code'
+require './colour_code'
 
 run Sinatra::Application

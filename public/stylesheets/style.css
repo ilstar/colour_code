@@ -2,6 +2,7 @@
 
 body {
   background-color: #EEE;
+  font-size: 18px;
 }
 
 .container {
@@ -20,6 +21,7 @@ h1 {
 
 textarea {
   width: 100%;
+  font-size: 14px;
 }
 
 #preview {
