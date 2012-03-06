@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'coderay'
 
-CODE_LANGS = %w{Ruby C CSS Delphi HTML JSON Java JavaScript PHP Python RHTML SQL YAML}
+CODE_LANGS = %w{Ruby JavaScript CSS ERB HTML HAML YAML JSON XML C Delphi Java PHP Python SQL}
 
 get '/' do
   erb :index
