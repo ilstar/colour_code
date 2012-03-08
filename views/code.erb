@@ -1,11 +1,11 @@
-<div id="colour-code">
-  <%= @code %>
-</div>
+<%= @code %>
 
 <div id="copy-btn-wrapper">
   <a href="javascript:;" id="copy" class="btn">copy</a>
-  <span id="copy-tip"></span>
+  <span id="copy-tip">Click me to copy the source code!</span>
 </div>
+
+<textarea id="colour-code" class="hidden"><%= @code %></textarea>
 
 <script type="text/javascript" language="javascript" charset="utf-8">
   var clip = new ZeroClipboard.Client();
