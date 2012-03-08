@@ -1,16 +1,16 @@
-<%= @code %>
+<div id="colour-code">
+  <%= @code %>
+</div>
 
 <div id="copy-btn-wrapper">
   <a href="javascript:;" id="copy" class="btn">copy</a>
   <span id="copy-tip"></span>
 </div>
 
-<textarea rows="12" cols="120" id="colour-code"><%= @code %></textarea>
-
 <script type="text/javascript" language="javascript" charset="utf-8">
   var clip = new ZeroClipboard.Client();
   clip.addEventListener('mouseover', function() {
-    $('#copy-tip').text('Copy the source code!');
+    $('#copy-tip').text('Click me to copy the source code!');
   });
   clip.addEventListener('mouseout', function() {
     $('#copy-tip').text('');
