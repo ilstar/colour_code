@@ -9,7 +9,13 @@ get '/' do
 end
 
 post '/' do
-  @code = CodeRay.scan(params[:code], params[:lang]).html(:line_numbers => :table, :css => params[:css_type].to_sym)
-  
-  erb :code
+  code = params[:code].strip
+
+  if code.empty?
+    "no code in the box, please do it."
+  else
+    @code = CodeRay.scan(code, params[:lang]).html(:line_numbers => :table, :css => params[:css_type].to_sym)
+
+    erb :code
+  end
 end
