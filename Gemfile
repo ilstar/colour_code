@@ -1,5 +1,5 @@
-# source 'https://rubygems.org'
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
+# source 'http://ruby.taobao.org'
 
 gem 'sinatra', '1.3.2'
 gem 'coderay', '1.0.5'
