@@ -28,12 +28,8 @@ server domain, :app, :web, :db, :primary => true
 # these http://github.com/rails/irs_process_scripts
 
 namespace :deploy do
-  def thin_file_path
-    "#{release_path}/config/thin.yml"
-  end
-
   def cmd_thin(sign)
-    run "bundle exec thin -C #{thin_file_path} #{sign}"
+    run "cd #{release_path} && bundle exec thin -C config/thin.yml #{sign}"
   end
 
   task :start do
