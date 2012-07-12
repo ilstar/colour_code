@@ -32,15 +32,19 @@ namespace :deploy do
     "#{release_path}/config/thin.yml"
   end
 
+  def cmd_thin(sign)
+    run "bundle exec thin -C #{thin_file_path} #{sign}"
+  end
+
   task :start do
-    run "thin -C #{thin_file_path} start"
+    cmd_thin 'start'
   end
 
   task :stop do
-    run "thin -C #{thin_file_path} stop"
+    cmd_thin 'stop'
   end
 
   task :restart do
-    run "thin -C #{thin_file_path} restart"
+    cmd_thin 'restart'
   end
 end
