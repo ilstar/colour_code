@@ -19,9 +19,7 @@ set :repository,  "git@github.com:ilstar/colour_code.git"
 set :branch, 'master'
 set :git_shallow_clone, 1
  
-role :web, domain
-role :app, domain
-role :db,  domain, :primary => true
+server domain, :app, :web, :db, :primary => true
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
@@ -30,15 +28,19 @@ role :db,  domain, :primary => true
 # these http://github.com/rails/irs_process_scripts
 
 namespace :deploy do
+  def thin_file_path
+    "#{release_path}/config/thin.yml"
+  end
+
   task :start do
-    run "thin -C config/thin.yml start"
+    run "thin -C #{thin_file_path} start"
   end
 
   task :stop do
-    run "thin -C config/thin.yml stop"
+    run "thin -C #{thin_file_path} stop"
   end
 
   task :restart do
-    run "thin -C config/thin.yml restart"
+    run "thin -C #{thin_file_path} restart"
   end
 end
